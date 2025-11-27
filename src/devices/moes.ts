@@ -1712,4 +1712,15 @@ export const definitions: DefinitionWithExtend[] = [
             await reporting.bind(device.getEndpoint(2), coordinatorEndpoint, ["genOnOff"]);
         },
     },
+    {
+        fingerprint: tuya.fingerprint("TS0001", ["_TZ3000_x8mbwtsz"]),
+        model: "ZM-104-M-16AM",
+        vendor: "Moes",
+        description: "1-gang switch module with energy meter",
+        extend: [
+            onOff({"powerOnBehavior":false}), 
+            electricityMeter(),
+        ],
+        options: [exposes.options.measurement_poll_interval()],
+    },
 ];
